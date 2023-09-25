@@ -6,8 +6,8 @@ const User = require("../models/User");
 
 const router = express.Router();
 
-//Route 1: Get all the Notes using : GET "/api/notes/fetchalluser". login required
-router.get("/fetchalluser", fetchUser, async (req, res) => {
+//Route 1: Get all the Notes using : GET "/api/notes/fetchallnotes". login required
+router.get("/fetchallnotes", fetchUser, async (req, res) => {
   try {
     const notes = await Note.find({ user: req.user.id });
     res.json(notes);
